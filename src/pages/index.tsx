@@ -21,17 +21,19 @@ const CreatePostWizard = () => {
   const { mutate, isLoading: isPosting } = api.posts.create.useMutation({
     onSuccess: () => {
       setInput("");
-      ctx.posts.getAll.invalidate();
+      void ctx.posts.getAll.invalidate();
     },
   });
   if (!user) return null;
 
   return (
     <div className="flex gap-3">
-      <img
+      <Image
         src={user.profileImageUrl}
-        alt=""
+        alt="user profile image"
         className="h-14 w-14 rounded-full"
+        width={56}
+        height={56}
       />
       <input
         placeholder="Type some emojis!"
