@@ -10,7 +10,7 @@ datasource db {
   relationMode = "prisma"
 }
 
-model Post {
+model profileImageUrl {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
 
